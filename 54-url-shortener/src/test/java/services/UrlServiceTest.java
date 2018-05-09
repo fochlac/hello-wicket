@@ -22,7 +22,7 @@ public class UrlServiceTest
     {
         String originalUrl = "http://www.experimental-software.com";
 
-        String shortUrl = urlService.generateRandomShortUrl(originalUrl);
+        String shortUrl = urlService.generateRandomShortUrl();
 
         assertEquals(7, shortUrl.length());
     }

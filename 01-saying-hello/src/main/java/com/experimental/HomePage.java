@@ -9,29 +9,29 @@ import org.apache.wicket.markup.html.WebPage;
 
 public class HomePage extends WebPage
 {
-	private static final long serialVersionUID = 1L;
-	private final TextField userNameInput;
-	private Label greeting;
+    private static final long serialVersionUID = 1L;
+    private final TextField userNameInput;
+    private Label greeting;
 
-	public HomePage(final PageParameters parameters)
-	{
-		super(parameters);
+    public HomePage(final PageParameters parameters)
+    {
+        super(parameters);
 
-		Form myForm = new Form("myForm") {
-			@Override
-			protected void onSubmit() {
-				String enteredName = (String) userNameInput.getDefaultModelObject();
-				greeting.setDefaultModelObject("Hello, " + enteredName);
-				userNameInput.setDefaultModelObject("");
-			}
-		};
+        Form myForm = new Form("myForm") {
+            @Override
+            protected void onSubmit() {
+                String enteredName = (String) userNameInput.getDefaultModelObject();
+                greeting.setDefaultModelObject("Hello, " + enteredName);
+                userNameInput.setDefaultModelObject("");
+            }
+        };
 
-		greeting = new Label("greeting", Model.of(""));
-		userNameInput = new TextField("userNameInput", new Model(""));
+        greeting = new Label("greeting", Model.of(""));
+        userNameInput = new TextField("userNameInput", new Model(""));
 
-		myForm.add(userNameInput);
+        myForm.add(userNameInput);
 
-		add(myForm);
-		add(greeting);
+        add(myForm);
+        add(greeting);
     }
 }
