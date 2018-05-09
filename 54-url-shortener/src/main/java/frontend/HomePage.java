@@ -1,5 +1,6 @@
 package frontend;
 
+import com.giffing.wicket.spring.boot.context.scan.WicketHomePage;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.wicket.markup.html.form.Form;
@@ -9,7 +10,9 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.WebPage;
 
-public class HomePage extends WebPage {
+@WicketHomePage
+public class HomePage extends WebPage
+{
     private static final long serialVersionUID = 1L;
 
     @Getter
