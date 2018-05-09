@@ -22,7 +22,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.experimental</groupId>
     <artifactId>54-url-shortener</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
         <!-- TODO project name  -->
     <name>quickstart</name>
@@ -58,6 +58,7 @@
             <artifactId>wicket-spring-boot-starter</artifactId>
             <version>1.0.12</version>
         </dependency>
+
 
         <!--  WICKET DEPENDENCIES -->
         <dependency>
@@ -141,6 +142,20 @@
             </testResource>
         </testResources>
         <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>frontend.Start</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <inherited>true</inherited>
                 <groupId>org.apache.maven.plugins</groupId>
