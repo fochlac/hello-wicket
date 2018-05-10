@@ -146,7 +146,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>frontend.Start</mainClass>
+                    <mainClass>com.experimental.surl.Start</mainClass>
                 </configuration>
                 <executions>
                     <execution>

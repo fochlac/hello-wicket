@@ -1,4 +1,4 @@
-package frontend;
+package com.experimental.surl.frontend;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.request.component.IRequestablePage;

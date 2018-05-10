@@ -1,9 +1,11 @@
-package services;
+package com.experimental.surl.services;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
+@Service
 @RequiredArgsConstructor
 public class UrlService {
 
@@ -13,15 +15,13 @@ public class UrlService {
 
     private static Random random = new Random();
 
-    private UrlRepository urlRepository;
-
-    public Url createShortUrl(String originalUrl) {
+    public String createShortUrl(String originalUrl) {
         String shortUrl;
         do {
             shortUrl = generateRandomShortUrl();
         } while (doesShortUrlAlreadyExist(shortUrl));
 
-        return urlRepository.save(new Url(originalUrl, shortUrl, 0));
+        return shortUrl;
     }
 
     protected static String generateRandomShortUrl() {
@@ -33,6 +33,6 @@ public class UrlService {
     }
 
     private boolean doesShortUrlAlreadyExist(String shortUrl) {
-        return urlRepository.findByShortUrl(shortUrl) != null;
+        return false;
     }
 }

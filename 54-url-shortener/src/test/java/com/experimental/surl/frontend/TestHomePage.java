@@ -1,4 +1,4 @@
-package frontend;
+package com.experimental.surl.frontend;
 
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;

@@ -1,4 +1,4 @@
-package services;
+package com.experimental.surl.services;
 
 public class UrlRepositoryImplTest {
 

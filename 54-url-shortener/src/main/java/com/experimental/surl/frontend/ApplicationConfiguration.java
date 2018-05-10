@@ -1,4 +1,4 @@
-package frontend;
+package com.experimental.surl.frontend;
 
 import com.giffing.wicket.spring.boot.context.extensions.ApplicationInitExtension;
 import com.giffing.wicket.spring.boot.context.extensions.WicketApplicationInitConfiguration;

@@ -1,4 +1,4 @@
-package services;
+package com.experimental.surl.services;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package frontend;
+package com.experimental.surl.frontend;
 
 import java.lang.management.ManagementFactory;
 

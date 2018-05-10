@@ -1,4 +1,4 @@
-package frontend;
+package com.experimental.surl.frontend;
 
 import com.giffing.wicket.spring.boot.context.scan.WicketHomePage;
 import lombok.Getter;
@@ -6,7 +6,6 @@ import lombok.Setter;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.PropertyModel;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.WebPage;
 
