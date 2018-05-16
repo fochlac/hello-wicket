@@ -5,7 +5,6 @@ import com.giffing.wicket.spring.boot.context.extensions.WicketApplicationInitCo
 import org.apache.wicket.protocol.http.WebApplication;
 
 @ApplicationInitExtension
-
 public class ApplicationConfiguration implements WicketApplicationInitConfiguration
 {
     @Override
