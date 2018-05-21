@@ -10,8 +10,8 @@ public class ApplicationConfiguration implements WicketApplicationInitConfigurat
     @Override
     public void init(WebApplication webApplication)
     {
+        webApplication.mountPage("/error", ShortUrlNotFound.class);
         webApplication.mountPage("/${shortUrl}", ShortUrlRedirect.class);
         webApplication.mountPage("/${shortUrl}/stats", UrlStats.class);
-        webApplication.mountPage("/error", ShortUrlNotFound.class);
     }
 }

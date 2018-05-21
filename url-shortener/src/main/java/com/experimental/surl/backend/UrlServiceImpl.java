@@ -74,7 +74,7 @@ class UrlServiceImpl implements UrlService
 
     @Override
     @Transactional
-    public void registerAccess(String shortUrlKey)
+    synchronized public void registerAccess(String shortUrlKey)
     {
         Url url = urlRepository.getByShortUrl(shortUrlKey);
         url.setNumberOfAccesses(url.getNumberOfAccesses() + 1);

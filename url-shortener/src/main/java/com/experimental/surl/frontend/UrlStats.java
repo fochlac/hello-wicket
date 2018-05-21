@@ -1,5 +1,6 @@
 package com.experimental.surl.frontend;
 
+import org.apache.wicket.authroles.authorization.strategies.role.annotations.AuthorizeInstantiation;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
@@ -8,6 +9,7 @@ import com.experimental.surl.backend.UrlService;
 
 import java.util.Optional;
 
+@AuthorizeInstantiation("USER")
 public class UrlStats extends WebPage
 {
     @SpringBean
