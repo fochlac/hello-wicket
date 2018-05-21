@@ -16,10 +16,10 @@ target/
 *.orig
 
 # Miscellaneous
+Notes.org
 notes.org
 \#*
 .#*
 *~
 *~*
-notes.org
 

@@ -12,5 +12,6 @@ public class ApplicationConfiguration implements WicketApplicationInitConfigurat
     {
         webApplication.mountPage("/${shortUrl}", ShortUrlRedirect.class);
         webApplication.mountPage("/${shortUrl}/stats", UrlStats.class);
+        webApplication.mountPage("/error", ShortUrlNotFound.class);
     }
 }

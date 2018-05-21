@@ -1,37 +1,49 @@
 package com.experimental.surl.frontend;
 
+import com.experimental.surl.backend.UrlService;
 import com.giffing.wicket.spring.boot.context.scan.WicketHomePage;
-import lombok.Getter;
-import lombok.Setter;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.request.Url;
+import org.apache.wicket.request.cycle.RequestCycle;
+import org.apache.wicket.request.http.WebRequest;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.spring.injection.annot.SpringBean;
+
+import java.net.URL;
 
 @WicketHomePage
 public class HomePage extends WebPage
 {
     private static final long serialVersionUID = 1L;
 
-    @Getter
-    @Setter
     private String shortUrl = null;
 
-    public HomePage()
+    private String longUrl = null;
+
+    @SpringBean
+    private UrlService urlService;
+
+    public HomePage(final PageParameters parameters)
     {
-        // This model references the page's shortUrl property and is
-        // shared by the label and form component
-        PropertyModel<String> messageModel = new PropertyModel<>(this, "shortUrl");
+        PropertyModel<String> shortUrlModel = new PropertyModel<>(this, "shortUrl");
+        PropertyModel<String> longUrlModel = new PropertyModel<>(this, "longUrl");
 
-        // The label displays the currently set shortUrl
-        add(new Label("shortUrl", messageModel));
+        add(new Label("shortUrl", shortUrlModel));
 
-        // Add a form to change the shortUrl. We don't need to do anything
-        // else with this form as the shared model is automatically updated
-        // on form submits
-        Form<?> form = new Form("form");
-        form.add(new TextField<>("urlInput", messageModel));
+        Form<?> form = new Form("form")
+        {
+            @Override
+            public void onSubmit()
+            {
+                shortUrl = urlService.toFullShortUrl(urlService.createShortUrl(longUrlModel.getObject()));
+                longUrlModel.setObject(null);
+            }
+        };
+        form.add(new TextField<>("urlInput", longUrlModel));
         add(form);
     }
 }
