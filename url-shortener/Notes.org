@@ -1,0 +1,36 @@
+
+* Next Steps
+** Learn how to use page components
+- Header
+- Sidebar
+
+https://www.safaribooksonline.com/library/view/wicket-in-action/9781932394986/kindle_split_017.html
+
+** Apply CSS from Cascade framework
+
+* Backlog
+** Configure running Travis CI tests
+Before this the project should be moved into its own repository
+** Publish DEB package
+
+
+* Miscellaneous
+** How to start a Docker container with a Postgres database	   :postgres:
+#+BEGIN_SRC 
+docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+#+END_SRC
+https://hub.docker.com/_/postgres/
+
+** How to log in to database					   :postgres:
+#+BEGIN_SRC 
+docker exec -it some-postgres bash -c 'psql -U postgres'
+#+END_SRC
+
+https://stackoverflow.com/questions/37694987/connecting-to-postgresql-in-a-docker-container-from-outside
+** Show all tables						   :postgres:
+#+BEGIN_SRC 
+
+docker exec -it some-postgres psql -U postgres -d mytest
+\dt
+#+END_SRC
+

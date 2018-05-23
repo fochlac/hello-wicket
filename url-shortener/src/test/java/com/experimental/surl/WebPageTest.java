@@ -3,7 +3,6 @@ package com.experimental.surl;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,8 +14,8 @@ import org.springframework.test.util.ReflectionTestUtils;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = UrlShortenerApplication.class)
 @ActiveProfiles("test")
-public abstract class WebPageTest {
-
+public abstract class WebPageTest
+{
     protected WicketTester tester;
 
     @Autowired

@@ -29,8 +29,8 @@ public class HomePage extends WebPage
 
     public HomePage(final PageParameters parameters)
     {
-        PropertyModel<String> shortUrlModel = new PropertyModel<>(this, "shortUrl");
-        PropertyModel<String> longUrlModel = new PropertyModel<>(this, "longUrl");
+        final PropertyModel<String> shortUrlModel = new PropertyModel<>(this, "shortUrl");
+        final PropertyModel<String> longUrlModel = new PropertyModel<>(this, "longUrl");
 
         add(new Label("shortUrl", shortUrlModel));
 
