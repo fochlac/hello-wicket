@@ -15,12 +15,6 @@ import java.util.Random;
 @Setter
 class UrlServiceImpl implements UrlService
 {
-    private static final int SHORT_URL_LENTH = 7;
-
-    private static final String CHAR_POOL = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-
-    private static final Random random = new Random();
-
     private final UrlRepository urlRepository;
 
     private final EnvironmentProperties environmentProperties;
@@ -83,6 +77,10 @@ class UrlServiceImpl implements UrlService
 
     protected static String generateRandomShortUrl()
     {
+        final int SHORT_URL_LENTH = 7;
+        final String CHAR_POOL = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        final Random random = new Random();
+
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < SHORT_URL_LENTH; i++) {
             sb.append(CHAR_POOL.charAt(random.nextInt(CHAR_POOL.length())));
