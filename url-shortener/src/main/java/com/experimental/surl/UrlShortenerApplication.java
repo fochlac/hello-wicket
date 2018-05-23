@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories
-public class Start
+public class UrlShortenerApplication
 {
     public static void main(String[] args)
     {
-        new SpringApplicationBuilder().sources(Start.class).run(args);
+        new SpringApplicationBuilder().sources(UrlShortenerApplication.class).run(args);
     }
 }
