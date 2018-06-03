@@ -4,6 +4,13 @@
 
 https://wicket.apache.org/start/quickstart.html
 
+### Fix code style
+```
+coala --bears=SpaceConsistencyBear --files=src/\*\* --apply-patches
+```
+
+- https://github.com/ksch-workflows/wicket-prototype/blob/master/checkstyle.xml
+
 
 ## Resources
 - https://wicket.apache.org/
