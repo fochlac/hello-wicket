@@ -2,18 +2,13 @@ package com.experimental.surl.frontend;
 
 import com.experimental.surl.backend.UrlService;
 import com.giffing.wicket.spring.boot.context.scan.WicketHomePage;
+import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.PropertyModel;
-import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.request.Url;
-import org.apache.wicket.request.cycle.RequestCycle;
-import org.apache.wicket.request.http.WebRequest;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
-
-import java.net.URL;
 
 @WicketHomePage
 public class HomePage extends WebPage
@@ -39,7 +34,8 @@ public class HomePage extends WebPage
             @Override
             public void onSubmit()
             {
-                shortUrl = urlService.toFullShortUrl(urlService.createShortUrl(longUrlModel.getObject()));
+                String generatedShortUrl = urlService.createShortUrl(longUrlModel.getObject());
+                HomePage.this.shortUrl = urlService.toFullShortUrl(generatedShortUrl);
                 longUrlModel.setObject(null);
             }
         };

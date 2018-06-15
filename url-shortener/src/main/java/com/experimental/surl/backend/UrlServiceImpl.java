@@ -12,7 +12,6 @@ import java.util.Random;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-@Setter
 class UrlServiceImpl implements UrlService
 {
     private final UrlRepository urlRepository;

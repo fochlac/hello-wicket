@@ -8,11 +8,11 @@ https://www.safaribooksonline.com/library/view/wicket-in-action/9781932394986/ki
 
 ** Apply CSS from Cascade framework
 
+   
 * Backlog
 ** Configure running Travis CI tests
 Before this the project should be moved into its own repository
 ** Publish DEB package
-
 
 * Miscellaneous
 ** How to start a Docker container with a Postgres database	   :postgres:
